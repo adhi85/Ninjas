@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  backend:
+    build: ./
+    container_name: nestjs_sample
+    environment:
+      - PORT=3000
+    ports:
+      - '3000:3000'
+    networks:
+      - nestjs_network
+
+networks:
+  nestjs_network:
+    driver: bridge
